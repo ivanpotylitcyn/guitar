@@ -1,0 +1,35 @@
+filters:
+  and:
+    - file.hasProperty("mastered")
+properties:
+  type:
+    displayName: Тема
+  name:
+    displayName: Название
+  mastered:
+    displayName: Освоено
+views:
+  - type: table
+    name: Всё по темам
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - type
+      - name
+      - mastered
+    summaries:
+      mastered: Checked
+    columnSize:
+      note.name: 117
+  - type: table
+    name: Ещё не освоено
+    filters:
+      and:
+        - mastered == false
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - type
+      - name

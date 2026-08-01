@@ -1,0 +1,21 @@
+filters:
+  and:
+    - type == "theory"
+properties:
+  mastered:
+    displayName: Разобрался
+views:
+  - type: table
+    name: Все понятия
+    order:
+      - file.name
+      - mastered
+    summaries:
+      mastered: Checked
+  - type: table
+    name: Ещё непонятно
+    filters:
+      and:
+        - mastered == false
+    order:
+      - file.name

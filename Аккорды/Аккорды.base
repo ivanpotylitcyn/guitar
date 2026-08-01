@@ -1,0 +1,36 @@
+filters:
+  and:
+    - 'type == "chord"'
+properties:
+  name:
+    displayName: Название
+  root:
+    displayName: Тоника
+  quality:
+    displayName: Тип
+  mastered:
+    displayName: Освоено
+views:
+  - type: table
+    name: "Все аккорды"
+    groupBy:
+      property: quality
+      direction: ASC
+    order:
+      - file.name
+      - name
+      - root
+      - quality
+      - mastered
+    summaries:
+      mastered: Checked
+  - type: table
+    name: "Не освоены"
+    filters:
+      and:
+        - "mastered == false"
+    order:
+      - file.name
+      - name
+      - root
+      - quality

@@ -1,0 +1,36 @@
+filters:
+  and:
+    - type == "key"
+properties:
+  name:
+    displayName: Название
+  tonic:
+    displayName: Тоника
+  mode:
+    displayName: Лад
+  mastered:
+    displayName: Освоено
+views:
+  - type: table
+    name: Все тональности
+    groupBy:
+      property: mode
+      direction: ASC
+    order:
+      - file.name
+      - name
+      - tonic
+      - mode
+      - mastered
+    summaries:
+      mastered: Checked
+  - type: table
+    name: Не освоены
+    filters:
+      and:
+        - mastered == false
+    order:
+      - file.name
+      - name
+      - tonic
+      - mode

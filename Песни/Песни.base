@@ -1,0 +1,46 @@
+filters:
+  and:
+    - type == "song"
+properties:
+  artist:
+    displayName: Исполнитель
+  key:
+    displayName: Тональность
+  tempo_bpm:
+    displayName: BPM
+  mastered_chords:
+    displayName: Аккорды
+  mastered_rhythm:
+    displayName: Бой/ритм
+  mastered_vocals:
+    displayName: Вокал
+  mastered_solo:
+    displayName: Соло
+  mastered:
+    displayName: Освоено целиком
+views:
+  - type: table
+    name: Все песни
+    order:
+      - file.name
+      - artist
+      - key
+      - tempo_bpm
+      - mastered_chords
+      - mastered_rhythm
+      - mastered_vocals
+      - mastered_solo
+      - mastered
+    summaries:
+      mastered: Checked
+  - type: table
+    name: В работе
+    filters:
+      and:
+        - mastered == false
+    order:
+      - file.name
+      - mastered_chords
+      - mastered_rhythm
+      - mastered_vocals
+      - mastered_solo
