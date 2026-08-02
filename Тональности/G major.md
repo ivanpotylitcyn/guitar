@@ -4,6 +4,8 @@ tonic: G
 mode: major
 name: Соль мажор
 mastered: false
+last_practiced: 2026-08-02
+practice_min: 10
 ---
 
 ---

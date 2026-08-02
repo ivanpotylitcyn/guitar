@@ -8,6 +8,10 @@ properties:
     displayName: Полутонов
   mastered:
     displayName: Освоено
+  last_practiced:
+    displayName: Последняя тренировка
+  practice_min:
+    displayName: Минут всего
 views:
   - type: table
     name: Все интервалы
@@ -16,8 +20,22 @@ views:
       - short
       - semitones
       - mastered
+      - last_practiced
+      - practice_min
     summaries:
       mastered: Checked
+      practice_min: Sum
+  - type: table
+    name: Давно не тренировал
+    sort:
+      - property: last_practiced
+        direction: ASC
+    order:
+      - file.name
+      - short
+      - last_practiced
+      - practice_min
+      - mastered
   - type: table
     name: Не освоены
     filters:

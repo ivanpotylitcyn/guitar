@@ -8,6 +8,10 @@ properties:
     displayName: Название
   mastered:
     displayName: Освоено
+  last_practiced:
+    displayName: Последняя тренировка
+  practice_min:
+    displayName: Минут всего
 views:
   - type: table
     name: Всё по темам
@@ -33,3 +37,28 @@ views:
     order:
       - type
       - name
+  - type: table
+    name: Тренировки
+    order:
+      - type
+      - file.name
+      - last_practiced
+      - practice_min
+      - mastered
+    sort:
+      - property: last_practiced
+        direction: ASC
+    summaries:
+      practice_min: Sum
+  - type: table
+    name: Ни разу не тренировал
+    filters:
+      and:
+        - '!file.hasProperty("last_practiced")'
+    groupBy:
+      property: type
+      direction: ASC
+    order:
+      - type
+      - file.name
+      - mastered

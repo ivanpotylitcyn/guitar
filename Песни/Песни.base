@@ -18,6 +18,10 @@ properties:
     displayName: Соло
   mastered:
     displayName: Освоено целиком
+  last_practiced:
+    displayName: Последняя тренировка
+  practice_min:
+    displayName: Минут всего
 views:
   - type: table
     name: Все песни
@@ -31,8 +35,11 @@ views:
       - mastered_vocals
       - mastered_solo
       - mastered
+      - last_practiced
+      - practice_min
     summaries:
       mastered: Checked
+      practice_min: Sum
   - type: table
     name: В работе
     filters:

@@ -1,13 +1,15 @@
 filters:
   and:
-    - type == "key"
+    - type == "melody"
 properties:
   name:
     displayName: Название
-  tonic:
-    displayName: Тоника
-  mode:
-    displayName: Лад
+  key:
+    displayName: Тональность
+  tempo_bpm:
+    displayName: BPM
+  frets:
+    displayName: Лады
   mastered:
     displayName: Освоено
   last_practiced:
@@ -16,15 +18,12 @@ properties:
     displayName: Минут всего
 views:
   - type: table
-    name: Все тональности
-    groupBy:
-      property: mode
-      direction: ASC
+    name: Все мелодии
     order:
       - file.name
-      - name
-      - tonic
-      - mode
+      - key
+      - frets
+      - tempo_bpm
       - mastered
       - last_practiced
       - practice_min
@@ -32,23 +31,23 @@ views:
       mastered: Checked
       practice_min: Sum
   - type: table
-    name: Давно не тренировал
-    order:
-      - file.name
-      - name
-      - last_practiced
-      - practice_min
-      - mastered
-    sort:
-      - property: last_practiced
-        direction: ASC
-  - type: table
     name: Не освоены
     filters:
       and:
         - mastered == false
     order:
       - file.name
-      - name
-      - tonic
-      - mode
+      - key
+      - frets
+      - tempo_bpm
+  - type: table
+    name: Давно не тренировал
+    order:
+      - file.name
+      - key
+      - last_practiced
+      - practice_min
+      - mastered
+    sort:
+      - property: last_practiced
+        direction: ASC

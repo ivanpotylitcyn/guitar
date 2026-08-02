@@ -1,6 +1,6 @@
 filters:
   and:
-    - 'type == "chord"'
+    - type == "chord"
 properties:
   name:
     displayName: Название
@@ -10,9 +10,13 @@ properties:
     displayName: Тип
   mastered:
     displayName: Освоено
+  last_practiced:
+    displayName: Последняя тренировка
+  practice_min:
+    displayName: Минут всего
 views:
   - type: table
-    name: "Все аккорды"
+    name: Все аккорды
     groupBy:
       property: quality
       direction: ASC
@@ -22,13 +26,27 @@ views:
       - root
       - quality
       - mastered
+      - last_practiced
+      - practice_min
     summaries:
       mastered: Checked
+      practice_min: Sum
   - type: table
-    name: "Не освоены"
+    name: Давно не тренировал
+    order:
+      - file.name
+      - name
+      - last_practiced
+      - practice_min
+      - mastered
+    sort:
+      - property: last_practiced
+        direction: ASC
+  - type: table
+    name: Не освоены
     filters:
       and:
-        - "mastered == false"
+        - mastered == false
     order:
       - file.name
       - name

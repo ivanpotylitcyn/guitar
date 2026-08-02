@@ -4,14 +4,21 @@ filters:
 properties:
   mastered:
     displayName: Разобрался
+  last_practiced:
+    displayName: Последний заход
+  practice_min:
+    displayName: Минут всего
 views:
   - type: table
     name: Все понятия
     order:
       - file.name
       - mastered
+      - last_practiced
+      - practice_min
     summaries:
       mastered: Checked
+      practice_min: Sum
   - type: table
     name: Ещё непонятно
     filters:
