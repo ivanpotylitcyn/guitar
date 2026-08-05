@@ -4,7 +4,7 @@ tonic: D
 mode: minor
 name: Ре минор
 mastered: false
-last_practiced: 2026-08-02
+last_practiced: 2026-08-05
 practice_min: 10
 ---
 
