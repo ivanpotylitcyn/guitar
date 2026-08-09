@@ -27,15 +27,15 @@ views:
       practice_min: Sum
   - type: table
     name: Давно не тренировал
-    sort:
-      - property: last_practiced
-        direction: ASC
     order:
       - file.name
       - short
       - last_practiced
       - practice_min
       - mastered
+    sort:
+      - property: last_practiced
+        direction: ASC
   - type: table
     name: Не освоены
     filters:

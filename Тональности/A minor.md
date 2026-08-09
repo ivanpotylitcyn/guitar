@@ -4,7 +4,7 @@ tonic: A
 mode: minor
 name: Ля минор
 mastered: false
-last_practiced: 2026-08-08
+last_practiced: 2026-08-09
 practice_min: 20
 ---
 

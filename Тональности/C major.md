@@ -4,6 +4,7 @@ tonic: C
 mode: major
 name: До мажор
 mastered: false
+last_practiced: 2026-08-09
 ---
 
 ---
