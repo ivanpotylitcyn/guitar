@@ -4,6 +4,8 @@ tonic: E
 mode: major
 name: Ми мажор
 mastered: false
+last_practiced: 2026-08-13
+practice_min: 10
 ---
 
 ---
